@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+We also incorporated [Electron.js](https://www.electronjs.org) into the project in order to make this client a full fledged, cross platform, desktop application with the ability to access the user's shell for easy access for scripts to run. Please read it's documentation to learn more, this was initially installed using the instruction [here](https://rbfraphael.medium.com/building-desktop-apps-with-electron-next-js-without-nextron-01bbf1fdd72e).
+
 ## Getting Started
 
 First, run the development server:
