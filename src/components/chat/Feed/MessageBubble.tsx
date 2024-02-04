@@ -6,7 +6,7 @@ type Props = {
 };
 
 const MessageBubble: React.FC<Props> = ({ message }) => {
-    const bungoAIChatIconPath = '/BungoAI.png';
+    const bungoAIChatIconPath = '/logo/BungoAILogo.png';
     const humanChatIconPath = '/Human.png';
 
     return (
