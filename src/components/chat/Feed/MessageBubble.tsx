@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import Message from '../../../common/chat/chat.message';
 
 type Props = {
@@ -22,7 +23,9 @@ const MessageBubble: React.FC<Props> = ({ message }) => {
                 </div>
             </div>
             <div className="message-text">
-                {message.text}
+                <ReactMarkdown>
+                    {message.text}
+                </ReactMarkdown>
             </div>
         </div>
     );
