@@ -14,6 +14,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    colors: {
+      'BungoAIGreen-500': '#dce8e0',
+      'BungoAIGreen-400': '#effcf4'
+    }
   },
   plugins: [],
 };

@@ -1,0 +1,12 @@
+appId: "Placeholder_app_ID"
+productName: "Bungo AI"
+copyright: "Copyright (c) 2024 BungoAI"
+win:
+  target: ["dir", "portable", "zip"]
+  icon: "public/logo/BungoAILogo.ico"
+linux:
+  target: ["dir", "appimage", "zip"]
+  icon: "public/logo/BungoAILogo.png"
+mac:
+  target: ["dir", "dmg", "zip"]
+  icon: "public/logo/BungoAILogo.icns"
