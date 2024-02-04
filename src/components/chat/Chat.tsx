@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Feed from './Feed/Feed';
 import Input from './Input/Input';
 
@@ -9,6 +9,24 @@ type Message = {
 
 export default function Chat() {
     const [messages, setMessages] = useState<Message[]>([]);
+    const [sysInfo, setSysInfo] = useState({});  // State to store system information
+
+    useEffect(() => {
+        if(window.sys_info){
+            // Fetch system information from Electron's main process
+            setSysInfo({
+                node: window.sys_info.node(),
+                chrome: window.sys_info.chrome(),
+                electron: window.sys_info.electron(),
+                arch: window.sys_info.arch(),
+                platformOS: window.sys_info.platformOS(),
+                // Fetch other necessary information...
+            });
+            window.sys_info.osRelease((osRelease) => {
+                setSysInfo(prevSysInfo => ({ ...prevSysInfo, osRelease }));
+            });
+        }
+    }, []);
 
     const handleSendMessage = (newMessageText: string) => {
         if (newMessageText.trim() === '') return; // Ignore empty messages
@@ -28,7 +46,10 @@ export default function Chat() {
             })).concat({
                 role: "user",
                 content: newMessageText
-            })
+            }),
+            request_context: {
+                sys_info: sysInfo  // Include the system information
+            }
         };
 
         // Send the message to the API
