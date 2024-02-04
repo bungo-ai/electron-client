@@ -41,28 +41,26 @@ export default function Input({ onSendMessage }: Props) {
 
     return (
         <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
-            <div className="relative flex">
+            <div className="flex items-end"> {/* Flex container with alignment to end */}
                 <textarea 
                     placeholder="Start typing here..." 
-                    className="form-textarea mt-1 block w-5/6 p-2.5 text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 overflow-y-auto resize-none"
+                    className="form-textarea flex-auto mr-8 mt-1 block w-full p-2.5 text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 overflow-y-auto resize-none"
                     value={message}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     rows={1}
                     ref={textAreaRef}
                 />
-                <div className="absolute right-0 items-center inset-y-0 hidden sm:flex">
-                    <button 
-                        type="button" 
-                        className="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-BungoAIGreen-500 hover:bg-BungoAIGreen-400 focus:outline-none"
-                        onClick={handleSendClick}
-                    >
-                        <span className="font-bold">Send</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 ml-2 transform rotate-90">
-                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
-                        </svg>
-                    </button>
-                </div>
+                <button 
+                    type="button" 
+                    className="inline-flex flex-none items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-BungoAIGreen-500 hover:bg-BungoAIGreen-400 focus:outline-none"
+                    onClick={handleSendClick}
+                >
+                    <span className="font-bold">Send</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 ml-2 transform rotate-90">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     )
